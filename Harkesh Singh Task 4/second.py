@@ -16,7 +16,7 @@ print("First Three Row :\n",a.head(3))
 print("Name Column :\n",a['Name'])
 
 b = a[a['Marks']>85]
-print("Marks greater then 85:\n",b)
+print("Marks greater than 85:\n",b)
 
 a['Grade']=['B','A','C','A','B']
 print(a)
