@@ -1,16 +1,11 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import pandas as pd
 import joblib
 
 
 app = FastAPI(title="Adult Income Prediction API")
 model = joblib.load("best_income_model.pkl")
-
-
-
-
-class from pydantic import BaseModel, Field
 
 class IncomeInput(BaseModel):
     age: int = Field(..., ge=17, le=100)
