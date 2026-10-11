@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #eef2f1;
+  color: #1c2b2a;
+}
+
+.card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(20, 50, 48, 0.1);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  color: #0f5c57;
+}
+
+.subtitle {
+  margin: 0 0 12px;
+  color: #4a5d5b;
+}
+
+/* API status */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  font-size: 0.85rem;
+  color: #4a5d5b;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b8c4c2;
+}
+
+.status.online .dot  { background: #1f9d6b; }
+.status.offline .dot { background: #d64545; }
+
+/* Form */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: inherit;
+  background: #f8faf9;
+  border: 1px solid #c5d1cf;
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #0f5c57;
+  outline-offset: 1px;
+  background: #ffffff;
+}
+
+details {
+  margin-top: 18px;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f5c57;
+}
+
+details label {
+  margin-top: 12px;
+}
+
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #ffffff;
+  background: #0f5c57;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #0b4743;
+}
+
+button:disabled {
+  background: #7fa8a5;
+  cursor: wait;
+}
+
+/* Result */
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.result.high {
+  background: #e3f4ef;
+  border-color: #9fd6c6;
+}
+
+.result.low {
+  background: #fdf1dc;
+  border-color: #efc987;
+}
+
+.result-label {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.bar {
+  height: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  background: #0f5c57;
+  transition: width 0.4s ease;
+}
+
+.result-detail {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: #4a5d5b;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 12px 14px;
+  color: #8a1f1f;
+  background: #fbe6e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+footer {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  color: #6b7c7a;
+  text-align: center;
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .card {
+    padding: 22px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

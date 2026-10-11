@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Income Predictor</h1>
+      <p class="subtitle">Fill in the details and the model predicts whether this person earns more than $50K a year.</p>
+      <p class="status" id="status"><span class="dot"></span><span id="status-text">Checking API...</span></p>
+    </header>
+
+    <form id="predict-form">
+      <div class="grid">
+        <label>Age
+          <input type="number" id="age" min="17" max="90" required>
+        </label>
+
+        <label>Hours per week
+          <input type="number" id="hours_per_week" min="1" max="99" required>
+        </label>
+
+        <label>Work class
+          <select id="workclass"></select>
+        </label>
+
+        <label>Occupation
+          <select id="occupation"></select>
+        </label>
+
+        <label>Education
+          <select id="education"></select>
+        </label>
+
+        <label>Marital status
+          <select id="marital_status"></select>
+        </label>
+
+        <label>Relationship
+          <select id="relationship"></select>
+        </label>
+
+        <label>Native country
+          <select id="native_country"></select>
+        </label>
+
+        <label>Race
+          <select id="race"></select>
+        </label>
+
+        <label>Sex
+          <select id="sex"></select>
+        </label>
+
+        <label>Capital gain ($)
+          <input type="number" id="capital_gain" min="0" required>
+        </label>
+
+        <label>Capital loss ($)
+          <input type="number" id="capital_loss" min="0" required>
+        </label>
+      </div>
+
+      <details>
+        <summary>Advanced</summary>
+        <label>Census weight (fnlwgt) - leave the default if you are not sure
+          <input type="number" id="fnlwgt" min="1" required>
+        </label>
+      </details>
+
+      <button type="submit" id="submit-btn">Predict income</button>
+    </form>
+
+    <section id="result" class="result" hidden aria-live="polite">
+      <p class="result-label" id="result-label"></p>
+      <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+      <p class="result-detail" id="result-detail"></p>
+    </section>
+
+    <p class="error" id="error" hidden role="alert"></p>
+
+    <footer>
+      Trained on the 1994 US Census "Adult" dataset with Logistic Regression. For learning only.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
